@@ -1,0 +1,22 @@
+<% if current_user && current_user.admin? %>
+<h2><%= t('home.index.title') %></h2>
+<div>Admin</div>
+<% elsif current_user %>
+<div>
+  <%= link_to t('home.index.organization.create'),
+  new_organization_path, remote: true %>
+</div>
+<div class='organizations'>
+  <div class='row'>
+    <%= render partial: 'organizations/organization',
+    collection: @organizations || 'layouts/empty_list' %>
+  </div>
+</div>
+<% else %>
+<div class='organizations'>
+  <div class='row'>
+    <%= render partial: 'organizations/organization',
+    collection: @organizations_public || 'layouts/empty_list' %>
+  </div>
+</div>
+<% end %>

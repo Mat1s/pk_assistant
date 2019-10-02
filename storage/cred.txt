@@ -1,0 +1,14 @@
+EDITOR=kate rails credentials:edit
+
+
+facebook:
+  app_id: 270081187025623
+  app_secret: 532c5ae317881c59a1fc7ccda2081f1b
+
+twitter: 
+  app_id: 2ZBTcm78McZoUCpwOpOkO5ZZC
+  app_secret: bBYObxYYQ1xHFWHJ9PTE35gluhMgJmwe8861bKPAU2507MfOUx
+
+linkedin: 
+  app_id: 86b4qirko58ppd
+  app_secret: jVXmVjciCWUlbxwp
