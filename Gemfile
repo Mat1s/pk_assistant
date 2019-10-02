@@ -33,6 +33,7 @@ gem 'sidekiq-limit_fetch'
 gem 'whenever', require: false
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'fog-aws'
 
 group :development do
   gem 'awesome_print'
