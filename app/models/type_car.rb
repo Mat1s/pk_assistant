@@ -1,0 +1,2 @@
+class TypeCar < ApplicationRecord
+end

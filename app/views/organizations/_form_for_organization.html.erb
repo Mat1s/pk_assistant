@@ -1,0 +1,19 @@
+<div class='form-group'>
+  <%= label_tag :city, t('organization.form.city') %><br />
+  <%= text_field_tag 'organization_addresses[][city]', nil, class: 'form-control', autocomplete: 'city' %>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :street, t('organization.form.street') %><br />
+  <%= text_field_tag 'organization_addresses[][street]', nil, class: 'form-control' %>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :house_number, t('organization.form.house_number') %><br />
+  <%= text_field_tag 'organization_addresses[][house_number]', nil, class: 'form-control' %>
+</div>
+
+<div class='form-group'>
+  <%= label_tag :phone, t('organization.form.phone') %><br />
+  <%= telephone_field_tag 'organization_addresses[][phone]', nil, class: 'form-control', placeholder: '375-xx-xxxxxxx', autocomplete: 'phone' %> 
+</div>

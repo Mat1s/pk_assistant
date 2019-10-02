@@ -1,0 +1,30 @@
+en:
+  layouts:
+    header:
+      title: 'My own cars assistant'
+      sign_out: 'Sign out'
+      sign_in: 'Sign in'
+      sign_up: 'Sign up'
+      sign_f: 'Sign in with Facebook'
+      sign_t: 'Sign in with Twitter'
+      sign_l: 'Sign in with LinkedIn'
+      nickname: 'Nickname: '
+      role: 'Role: '
+      phrase: 'Lets help each other'
+      search: 'Search'
+      lang:
+        select: 'Select language'
+      main:
+        empty: 'Nothing here'
+      en: 'English'
+      es: 'Español'
+      ru: 'Русский'
+    footer:
+      organization_check: 'List of unconfirmed organizations'
+  addresses:
+    form:
+      submit: 'Submit addresses'
+      add_address: 'Add address'
+  admin:
+    update:
+      success: 'Organization was successfully added'

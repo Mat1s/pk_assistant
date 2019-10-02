@@ -1,0 +1,30 @@
+es:
+  layouts:
+    header:
+      title: 'Asistente de coche'
+      sign_out: 'Сerrar sesión'
+      sign_in: 'Iniciar sesión'
+      sign_up: 'Para registrarse'
+      sign_f: 'Iniciar sesión con Facebook'
+      sign_t: 'Iniciar sesión con Twitter'
+      sign_l: 'Iiniciar sesión con LinkedIn'
+      nickname: 'Apodo: '
+      role: 'Papel: '
+      phrase: 'Ayudémonos unos a otros'
+      search: 'Buscar'
+      lang:
+        select: 'Elegir idioma'
+      main:
+        empty: 'Nada aquí'
+      en: 'English'
+      es: 'Español'
+      ru: 'Русский'
+    footer:
+      organization_check: 'Lista de organizaciones no confirmadas'
+  addresses:
+    form:
+      submit: 'Enviar direcciones'
+      add_address: 'Añadir dirección'
+  admin:
+    update:
+      success: 'La organización fue agregada exitosamente'

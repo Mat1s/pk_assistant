@@ -1,0 +1,15 @@
+:concurrency: 5
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 20
+:queues:
+  - ['critical', 5]
+  - ['default', 3]
+  - ['low', 1]
+  - ['mailers', 4]
+:limits:
+  critical: 10
+  default: 15
+  low: 15
+  mailers: 13

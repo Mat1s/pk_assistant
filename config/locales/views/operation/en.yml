@@ -1,0 +1,13 @@
+en:
+  operation:
+    form:
+      title: 'Form for operation'
+      organization: 'Choose organization'
+      service: 'Service'
+      mileage: '3 thousand km'
+      time: '1 mounth'
+      price: '0.01$'
+      submit: 'Submit'
+    operations:
+      all: 'All Services'
+      need: 'Services need proceed'

@@ -1,0 +1,7 @@
+ru:
+  home:
+    index:
+      title: 'Главная станица'
+      organization:
+        title: 'Организации'
+        create: 'Создать новую организацию'

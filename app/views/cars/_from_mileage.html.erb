@@ -1,0 +1,23 @@
+<%= form_with model: @car, :html => { id: 'mileage_form' }, remote: true do |f| %>
+  <% if @car.errors.any? %>
+    <div id='error_explanation'>
+      <ul class='list-group'>
+      <% @car.errors.full_messages.each do |message| %>
+        <li class='list-group-item list-group-item-danger'><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='form-group'>
+    <%= f.label :mileage %><br />
+    <%= f.number_field :mileage , class: 'form-control',
+    placeholder: true, autocomplete: 'mileage', min: 0, step: 1000 %> 
+  </div>
+
+  <div><%= f.hidden_field :user_id %></div>
+
+  <div class='actions'>
+    <%= f.submit t('car.form.submit_mileage'), class: 'btn btn-info' %>
+  </div>
+<% end %>

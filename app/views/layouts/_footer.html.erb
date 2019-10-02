@@ -1,0 +1,27 @@
+<footer class='page-footer font-small blue pt-4'>
+    <div class='container-fluid text-center text-md-left'>
+      <div class='row'>
+        <div class='col-md-7 mt-md-0 mt-3'>
+          <h5 class='text-uppercase'><%= t('footer.body.title') %></h5>
+          <p><%= t('footer.body.text') %></p>
+        </div>
+        <hr class='clearfix w-100 d-md-none pb-3'>
+        <div class='col-md-5 mb-md-0 mb-3'>
+            <h5 class='text-uppercase'><%= t('footer.admin.title') %></h5>
+            <ul class='list-unstyled'>
+              <li>
+                <%= link_to t('footer.admin.admin_permit'), admin_permit_organizations_path %>
+              </li>
+              <li>
+                <%= link_to t('footer.admin.sidekiq'), sidekiq_web_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='footer-copyright text-center py-3'>© <%= Time.now.year %>
+      <%= t('footer_right.text') %>
+      <%= link_to t('footer_right.link'), 'https://github.com/Mat1s/personal_car_assistant' %>
+    </div>
+  </footer>

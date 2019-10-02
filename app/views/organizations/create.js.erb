@@ -1,0 +1,5 @@
+$('#org_form').remove();
+$('#main').show(1700);
+$('.organizations').html('<%= j render partial: 'organizations/organization', collection: @organizations %>');
+$('.organizations').css('float', 'left');
+$('#form_header').remove();

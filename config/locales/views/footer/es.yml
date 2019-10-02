@@ -1,0 +1,12 @@
+es: 
+  footer:
+    admin:
+      title: 'ENLACES'
+      admin_permit: 'Permitir organización'
+      sidekiq: 'Sidekiq'
+    body:
+      title: 'AUTO ASSISTANT'
+      text: 'El asistente automático lo ayuda a mantener su automóvil por un largo tiempo y elige la mayoría de las organizaciones de espe- cialización que lo ayudan con su automóvil pie de página derecho.'
+  footer_right:
+    link: 'Fuentes en proyecto'
+    text: 'Copyright: '

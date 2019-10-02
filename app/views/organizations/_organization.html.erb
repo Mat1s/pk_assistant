@@ -1,0 +1,73 @@
+<div class='organization_element'>
+  <div class="card border-success mb-3 card-custom" style="max-width: 20rem;">
+    <div class="card-header text-center">
+        <%= link_to "#{organization.name}",
+          organization_path(organization.id) %>
+        <%= rating_for organization, 'name', enable_half: true %>
+    </div>
+    <div class="card-body text-success">
+      <h5 class="card-title">
+        <% if current_user && policy(organization).update? && !organization.aasm_state.match?(/unverified|rejected|archived/) %>
+          <%= link_to "#{organization.aasm_state.upcase}",
+            change_state_organization_path(organization.id) %>
+        <% else %>
+          <%= organization.aasm_state.upcase %>
+        <% end %>
+      </h5>
+      <p class="card-text">
+        <%= t('organization.organization.contacts') %>
+        <%= mail_to "#{organization.email}" do %>
+          <span><%= 'Email: ' + organization.email %></span>
+        <% end %><br />
+        <abbr><%= t('organization.organization.telephone') %>
+        </abbr> +<%= organization.phone %>
+      </p>
+      <% if current_user %>
+        <% if policy(organization).update? %>
+          <%= link_to t('organization.organization.destroy'), organization, method: :delete, remote: true, data: {confirm:
+            t('organization.organization.ask') } %> |
+          <%= link_to t('organization.organization.edit'), edit_organization_path(organization), remote: true %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @service_for_organizations %>
+    <div id='services'>
+      <div class="card border-success mb-3 card-custom" style="max-width: 18rem;">
+      <div class="card-header text-center">
+        <%= @service_type %>
+      </div>
+      <div class="card-body text-success">
+        <p class="card-text">
+          <ul>
+            <li class='decoration-none service-list'><%= render partial: 'service',
+              collection: @service_for_organizations %></li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @organization_addresses %>
+    <div class="card border-success mb-3 card-custom" style="max-width: 24rem;">
+      <div class="card-header text-center"><%= organization.name %></div>
+      <div class="card-body text-success">
+        <h5 class="card-title"><%= t('organization.organization.address')%></h5>
+        <p class="card-text">
+          <div id='addresses'>
+            <%= render partial: 'address', collection: @organization_addresses %>
+          </div>
+        </p>
+        <% if current_user %>
+          <% if policy(organization).update? %>
+            <%= link_to t('organization.organization.add_address'), new_organization_organization_address_path(organization.id), remote: true %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+

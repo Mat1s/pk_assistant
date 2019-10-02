@@ -1,0 +1,44 @@
+<%= render @car %>
+
+<div id='operations_not_processed'>
+  <div class="card border-primary mb-3 card-custom" style="max-width: 18rem;">
+    <div class="card-header text-center"><%= t('operation.operations.all')%></div>
+    <div class="card-body text-primary">
+      <p class="card-text">
+        <% @operations.each do |operation| %>
+          <%= t('activerecord.attributes.operation.service_id')%>: <%= operation.service_id %><br />
+          <%= t('activerecord.attributes.operation.price')%>: <%= operation.price %><br />
+          <%= t('activerecord.attributes.operation.current_mileage')%>: <%= operation.current_mileage %><br />
+          <%= t('activerecord.attributes.operation.next_mileage')%>: <%= operation.next_mileage %><br />
+          <%= t('activerecord.attributes.operation.next_time')%>: 
+          <%= distance_of_time_in_words(operation.next_time - operation.created_at) %><br />
+          <br />
+        <% end %>
+        <%= link_to t('car.operations.show'), new_car_operation_path(@car.id), remote: true %>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div id='operations_need_processed'>
+  <div class="card border-danger mb-3 card-custom" style="max-width: 18rem;">
+    <div class="card-header text-center"><%= t('operation.operations.need')%></div>
+    <div class="card-body text-danger">
+      <p class="card-text">
+        <% @operations_need_processed.each do |operation| %>
+          <%= t('activerecord.attributes.operation.service_id')%>: <%= operation.service_id %><br />
+          <%= t('activerecord.attributes.operation.price')%>: <%= operation.price %><br />
+          <%= t('activerecord.attributes.operation.current_mileage')%>: <%= operation.current_mileage %><br />
+          <%= t('activerecord.attributes.operation.next_mileage')%>: <%= operation.next_mileage %><br />
+          <%= t('activerecord.attributes.operation.next_time')%>: 
+          <%= distance_of_time_in_words(operation.next_time - operation.created_at) %><br />
+          <%= link_to 'update', edit_car_operation_path(@car, operation), remote: true %>
+          <br />
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+
+ 

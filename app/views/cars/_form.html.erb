@@ -1,0 +1,88 @@
+<%= form_with model: @car, :html => { id: 'car_form' }, remote: true do |f| %>
+  <% if @car.errors.any? %>
+    <div id='error_explanation'>
+      <ul class='list-group'>
+      <% @car.errors.full_messages.each do |message| %>
+        <li class='list-group-item list-group-item-danger'><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div><%= f.hidden_field :user_id %></div>
+
+  <div class='form-group'>
+    <%= f.label :make %><br />
+    <%= f.select(:make, @make.collect {|t| [ t, t ] },
+    { prompt: t('car.form.make') },
+    { class: 'form-control', id: 'make'}) %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :model %><br />
+    <%= f.select(:model, @model.collect {|t| [ t, t ] },
+    { prompt: t('car.form.model') },
+    { class: 'form-control', id: 'model', disabled: true}) %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :year %><br />
+    <%= f.select(:year, @year.collect {|t| [ t, t ] },
+    { prompt: t('car.form.year') },
+    { class: 'form-control', id: 'year', disabled: true}) %>
+  </div>
+
+  <div id='car_description' disabled>
+    <div class='form-group'>
+      <%= f.label :vehicle_type %><br />
+      <%= f.select(:vehicle_type, @vehicle_type.collect {|t| [ t, t ] },
+      { prompt: t('car.form.vehicle_type') },
+      { class: 'form-control'}) %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :fuel_type %><br />
+      <%= f.select(:fuel_type, @fuel_type.collect {|t| [ t, t ] },
+      { prompt: t('car.form.fuel_type') },
+      { class: 'form-control'}) %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :cubic_capacity %><br />
+      <%= f.number_field :cubic_capacity, class: 'form-control',
+      autocomplete: 'cubic_capacity',
+      placeholder: true, min: 898, max: 8400 %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :transmission %><br />
+      <%= f.select(:transmission, @transmission.collect {|t| [ t, t ] },
+      { prompt: t('car.form.transmission') },
+      { class: 'form-control'}) %>
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :purchase_date %><br />
+      <%= f.number_field :purchase_date , class: 'form-control', id: 'purchase',
+      autocomplete: 'purchase_date', placeholder: true,
+      min: 1909, max: Time.now.year %> 
+    </div>
+
+    <div class='form-group'>
+      <%= f.label :mileage %><br />
+      <%= f.number_field :mileage , class: 'form-control',
+      placeholder: 'km', autocomplete: 'mileage', min: 0, step: 1000 %> 
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :description %><br />
+    <%= f.text_area :description , class: 'form-control',
+    placeholder: true,
+    autocomplete: 'description', rows: 5, cols: 20 %> 
+  </div>
+
+  <div class='actions'>
+    <%= f.submit t('car.form.submit'), class: 'btn btn-info' %>
+  </div>
+<% end %>

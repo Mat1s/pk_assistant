@@ -1,0 +1,261 @@
+ /*
+ *= require_self
+ */
+@import "bootstrap";
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+// autocomlite
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  li {
+    background-color: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 0;
+    a {
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #fffafa;
+    }
+  }
+}
+
+// dropdown menu
+.dropdown-menu {
+  background-color: #fffafa;
+  padding-left: 5px;
+  border: 2px solid #8b8682;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px #FFEFBD;
+}
+.norm-ul {
+  li { 
+    margin-left: 20px;
+  }
+}
+.header-li {
+  width: auto;
+}
+.decoration-none {
+  list-style-type: none;
+}
+.custom-list {
+  width: 100%;
+  height: 300px;
+  overflow: scroll;
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #8b8682;
+  border-radius: 5px;
+  background-color: #fffaff;
+}
+
+.service-list {
+  height: 300px;
+  overflow-y: auto;
+}
+
+// back-btn 
+.back {
+  float: left;
+}
+
+//header
+.header {
+  position: relative;
+  left: 0;
+  width: 100%;
+  background-color: #fffafa;
+  letter-spacing: 0em;
+  height: auto;
+  min-height: 30%;
+  padding: 10px;
+}
+.lang {
+  text-align: center;
+}
+
+// forms
+form {
+  text-align: left;
+  margin: 0% 20%;
+}
+input, textarea, select {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+input {
+  height: auto !important;
+}
+input[type='checkbox'] {
+  float: left;
+  width: auto;
+  margin-right: 10px;
+}
+button[type='button'] {
+  width: 100%;
+}
+.checkbox { 
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span{
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+.form-control, .input-group {
+  border: 1px solid #00ff7f;
+  border-radius: 5px;
+}
+
+body {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+ 
+// when error
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.titles {
+  a {
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+  }
+}
+ 
+.image-main {
+  position: absolute;
+  background-color: black;
+  background-image: url('main-car-pictures.png');
+  width: 100%;
+  background-repeat: repeat-y;
+  background-position: center;
+  height: 610px;
+  line-height: 1em;
+  text-align: center;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.card-custom {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    height: auto;
+    max-height: 500px;
+    margin: 15px;
+    width: 30%;
+    display: block;
+    float: left;
+    overflow: auto;
+  }
+.paginate {
+  margin: 15px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  float: left;
+}
+
+// footer
+.footer {
+  clear: both;
+  display: table;
+  min-height: 30%;
+  width: 100%;
+  bottom: 30px;
+  background-color: #696969; 
+  color: #fffafa;
+  a {
+    text-decoration: none;
+    color: #fffafa;
+  }
+}
+.footer-copyright {
+  display: table;
+  width: 100%;
+  bottom: 0;
+  min-height: 20px;
+  background-color: #fffafa; 
+  color: #696969;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color: #00688b;
+  text-align: center;
+}
+
+// header in organization form
+.title {
+    overflow: hidden;
+    text-align: center;
+    font-size: 25px;
+}
+.title span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.title:before,
+.title:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 2px;
+    background-color: #00ff7f;
+    position: relative;
+}
+.title:before {
+    margin-left: -100%;
+    left: -14px;
+}
+.title:after {
+    margin-right: -100%;
+    right: -14px;
+}
+
+.btn-form {
+  float:left;
+  margin: 1%;
+  width: 48%;
+}
+.alert {
+  background-color: red;
+  color: white;
+}
+
+#operation_form{
+  max-width: 29rem;
+  width: 100%;
+  display: block;
+  float: left;
+}

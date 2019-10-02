@@ -1,0 +1,28 @@
+$('#main').hide().after('<%= j render("organizations/form") %>');
+var data_service = JSON.parse(<%= @services.inspect.html_safe %>);
+var data_service_checked = JSON.parse(<%= @services_checked.inspect.html_safe %>);
+
+$("#service_btn").prop('disabled', false);
+
+$( document ).ready(function() {
+  var forHtml = '<div class="form-group box custom-list"><ul>';
+  for(var i = 0; i < data_service.length; i++) {
+    forHtml += '<li class="decoration-none"><input type="checkbox" class="form-control"'
+    for(var j = 0; j < data_service_checked.length; j++) {
+      if(data_service[i].id == data_service_checked[j].service_id) {
+        forHtml += ' checked ';
+      }
+    }
+    forHtml += 'id="service_id" multiple name="service_for_organizations[service_id][]"' +
+    ' value="' + data_service[i].id + '" /><label for="service_id">' +
+    data_service[i].name + '</label></li><br/> '
+  }
+  forHtml += '</ul></div>';
+  $('#checkbox_collections').html(forHtml);
+});
+
+$("#service_btn").on('click', function() {
+  $('#checkbox_collections').toggle(1000);
+});
+
+$('#address_btn').remove();

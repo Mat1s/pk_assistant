@@ -1,0 +1,26 @@
+en:
+  organization:
+    form:
+      title: 'Fill in the form'
+      select: 'Choose...'
+      services: 'Hide/Show services'
+      address: 'Add address'
+      submit: 'Submit'
+      city: 'City'
+      street: 'Street'
+      house_number: 'House number'
+      phone: 'Phone'
+      address_title: 'Address №'
+    organization:
+      contacts: 'Contacts:'
+      ask: 'Are you sure?'
+      telephone: 'Phone:'
+      add_address: 'Add Address'
+      destroy: 'destroy'
+      edit: 'edit'
+      change_state: 'Change state of organization'
+      address: 'Addresses'
+    address:
+      in: 'in'
+    permit:
+      process: 'Process request'

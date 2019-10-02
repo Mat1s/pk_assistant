@@ -1,0 +1,12 @@
+en: 
+  footer:
+    admin:
+      title: 'LINKS'
+      admin_permit: 'Permit organization'
+      sidekiq: 'Monitoring Sidekiq'
+    body:
+      title: 'AUTO ASSISTANT'
+      text: 'Auto assistant help you to maintain your car for a long time, and choose most expireance organization which help you with your car.'
+  footer_right:
+    link: 'Sources on project'
+    text: 'Copyright: '

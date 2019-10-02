@@ -1,0 +1,60 @@
+<h2 id="form_header"><%= t('organization.form.title') %></h2>
+<%= form_with model: @organization, :html => { id: 'org_form' }, remote: true do |f| %>
+  <% if @organization.errors.any? %>
+    <div id='error_explanation'>
+      <ul class='list-group'>
+      <% @organization.errors.full_messages.each do |message| %>
+        <li class='list-group-item list-group-item-danger'><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div><%= f.hidden_field :user_id %></div>
+
+  <div class='form-group'>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: 'form-control', autocomplete: 'name' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class: 'form-control', autocomplete: 'email' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :phone %><br />
+    <%= f.telephone_field :phone , class: 'form-control', placeholder: '375-xx-xxxxxxx', autocomplete: 'phone' %> 
+  </div>
+  <div class='form-group'>
+    <%= f.label :service_type_id %><br />
+    <%= f.select(:service_type_id, @types.collect {|t| [ t.type, t.id ] },
+    { prompt: t('organization.form.select') }, { class: 'form-control', id: 'service_type'}) %>
+  </div>
+
+
+  <div class='form-group'>
+    <%= button_tag t('organization.form.services'), type: 'button', id:
+    'service_btn', class: 'btn btn-success dropdown-toggle', disabled: true %>
+  </div>
+
+  <%= f.fields_for :service_for_organizations do |sfo| %>
+    <div id='checkbox_collections'>
+    </div>
+  <% end %>
+
+
+  <div class='form-group'>
+    <%= button_tag t('organization.form.address'), type: 'button', id:
+    'address_btn', class: 'btn btn-success' %>
+  </div>
+
+  <%= f.fields_for :organization_addresses do |sfo| %>
+    <div id='addressess_collections'>
+    </div>
+  <% end %>
+
+  <div class='actions'>
+    <%= f.submit t('organization.form.submit'), class: 'btn btn-info' %>
+  </div>
+<% end %>

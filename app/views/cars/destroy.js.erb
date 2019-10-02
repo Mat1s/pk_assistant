@@ -1,0 +1,6 @@
+var car = '#car' + <%= @id_delete %>;
+$(car).remove();
+
+if ($('#main').children('ul').length == 0) {
+  window.location.href = '../';
+}

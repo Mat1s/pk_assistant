@@ -1,0 +1,26 @@
+es:
+  organization:
+    form:
+      title: 'Rellene el formulario'
+      select: 'Elegir ...'
+      services: 'Mostrar/Ocultar servicios'
+      address: 'Agregar direccion'
+      submit: 'Enviar'
+      city: 'Ciudad'
+      street: 'Calle'
+      house_number: 'Número de casa'
+      phone: 'Teléfono'
+      address_title: 'Dirección №'
+    organization:
+      contacts: 'Contactos:'
+      ask: 'Estas seguro?'
+      telephone: 'Telefono:'
+      add_address: 'Añadir dirección'
+      destroy: 'destruir'
+      edit: 'editar'
+      change_state: 'Cambiar estado de organización'
+      address: 'Direccions'
+    address:
+      in: 'en'
+    permit:
+      process: 'Solicitud de proceso'

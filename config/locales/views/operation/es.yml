@@ -1,0 +1,13 @@
+es:
+  operation:
+    form:
+      title: 'Formulario para la operación'
+      organization: 'Elegir organización'
+      service: 'Servicio'
+      mileage: '3 mil. km.'
+      time: '1 mes'
+      price: '0.01$'
+      submit: 'Enviar'
+    operations:
+      all: 'Todos los servicios'
+      need: 'Los servicios necesitan proceder'

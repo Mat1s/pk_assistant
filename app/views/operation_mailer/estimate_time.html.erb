@@ -1,0 +1,7 @@
+<h1><%= t('.greeting', email: @operation.email) %></h1>
+<% if @operation.mileage < 1000 %>
+  <p><%= t('.body_1', make: @operation.make, mileage: @operation.mileage ) %></p>
+<% else %>
+  <p><%= t('.body_2', make: @operation.make) %></p>
+<% end %>
+<p><%= t('.redirect') %><%= link_to t('.link'), edit_car_operation_url(@operation.car_id, @operation.id), remote: true %></p>

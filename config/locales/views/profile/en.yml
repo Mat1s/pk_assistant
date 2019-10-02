@@ -1,0 +1,8 @@
+en:
+  profile:
+    submit: 'Save changes'
+    title: 'Edit profile'
+    show:
+      edit: 'Edit profile'
+      new_car: 'Create new car'
+

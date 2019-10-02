@@ -1,0 +1,48 @@
+$('#main').hide().after('<%= j render("organizations/form") %>');
+$("#service_type").on('change', function() {
+
+var selected_type = $( "#service_type option:selected" );
+var first_type = $( "#service_type option:first" );
+
+if( selected_type != first_type ) {
+  $("#service_btn").prop('disabled', false);
+  console.log(selected_type.text());
+  $.ajax({
+    type:"GET",
+    url:"/organizations/checkboxes",
+    dataType:"json",
+    data: {type_of_service: selected_type.val() },
+    success:function(data) {
+      console.log(data);
+      var forHtml = '<div class="form-group box custom-list"><ul>';
+      for(var i = 0; i < data.length; i++) {
+        console.log(data[i].name);
+        forHtml += '<li class="decoration-none"><input type="checkbox" class="form-control" ' +
+        'id="service_id" multiple ' +
+        'name="service_for_organizations[service_id][]" value="' + data[i].id +
+        '" /><label for="service_id">' + data[i].name + '</label></li><br/> '
+      }
+      forHtml += '</ul></div>';
+      console.log(forHtml);
+      $('#checkbox_collections').html(forHtml);
+    }
+  })
+} else {
+  $("#service_btn").prop('disabled', true);
+}
+});
+
+$("#service_btn").on('click', function() {
+  $('#checkbox_collections').toggle(1000);
+});
+
+var count_addresess = 1;
+
+$("#address_btn").on('click', function() {
+  $('#checkbox_collections').hide(1000);
+  $('#addressess_collections').append('<div class="title"><span>' +
+  '<%= t('organization.form.address_title') %>' + count_addresess + '</span></div>');
+  $('#addressess_collections').append("<%= j render 'form_for_organization' %>");
+  $('#addressess_collections').append('</div>');
+  count_addresess +=1;
+});

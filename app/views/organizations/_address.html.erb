@@ -1,0 +1,18 @@
+<div id="address<%= address.id %>">
+  <ul class='decoration-none'>
+    <li><%= t('organization.address.in') + ' '+ address.city.capitalize %></li>
+    <li><%= address.street.capitalize %>,<%= address.house_number %></li>
+    <li>
+      <%= t('organization.organization.telephone') %> +<%= address.phone %>
+    </li>
+    <li>
+      <% if policy(address).update? %>
+        <%= link_to t('organization.organization.destroy'), organization_organization_address_path(address.organization_id, address.id),
+          method: :delete, remote: true,
+          data: {confirm: t('organization.organization.destroy') } %> |
+
+        <%= link_to t('organization.organization.edit'), edit_organization_organization_address_path(address.organization_id, address.id), remote: true %>
+      <% end %>
+    </li>
+  </ul>
+</div>

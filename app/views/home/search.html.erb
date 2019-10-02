@@ -1,0 +1,42 @@
+<h3>Поиск</h3>
+
+<%= form_for :search, url: search_path, method: :get do |form| %>
+  <div class='form-group'>
+    <%= form.label :query, 'Search' %><br />
+    <%= form.text_field :query, value: params[:search].presence && params[:search][:query], class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= form.label :service_type, 'Type Service' %><br />
+    <%= form.select(:service_type, @service_types.collect {|t| [ t.type, t.id ] }, { prompt: 'All types' }, { class: 'form-control'}) %>
+  </div>
+
+  <%= form.submit 'Search',  class: 'btn btn-success' %>
+<% end %>
+
+<% unless @results.nil? %>
+  <% if @results.empty? %>
+    <h2>Нет результатов!</h2>
+  <% else %>
+    <h4>Результаты</h4>
+    <% @results.each do |result| %>
+      <div class="card border-primary mb-3 card-custom" style="max-width: 18rem;">
+        <div class="card-header text-center">Услуга: <%= result.service["name_#{I18n.locale}"] %><br /></div>
+        <div class="card-body text-primary">
+          <p class="card-text">
+            Название организации:<br /> <%= result.organization.name %><br />
+            Почта организации: <%= result.organization.email %><br />
+            Телефон организации:<%= result.organization.phone %><br />
+            <% result.organization.organization_addresses.each do |address| %>
+              Город: <%= address.city %><br />
+              Адрес: <%= address.street %> str., <%= address.house_number %>.<br />
+              Телефон: <%= address.phone %><br /><br />
+            <% end %>
+          </p>
+        </div>
+      </div>
+    <% end %>   
+  <% end %>
+<% end %>
+     
+        

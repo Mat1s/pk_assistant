@@ -1,0 +1,7 @@
+es:
+  pundit:
+    default: 'No estás autorizado para realizar esta acción.'
+    car_policy:
+      update?: '¡No puedes editar este auto!'
+      create?: 'No puedes crear coches!'
+    admin: 'No eres admin'

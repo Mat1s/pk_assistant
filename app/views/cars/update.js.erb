@@ -1,0 +1,3 @@
+$('#mileage_form').remove();
+$('#main').show();
+$('#main').html('<%= j render(partial: 'cars/car', collection: @cars) %>');

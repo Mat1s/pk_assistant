@@ -1,0 +1,20 @@
+es:
+  car:
+    form:
+      make: 'elegir marca de coche'
+      model: 'elegir modelo de coche'
+      year: 'elegir año, cuando coche hecho'
+      vehicle_type: 'elegir el tipo de vehículo del vehículo'
+      tipo fuel_type combustible: 'elegir el tipo de combustible del coche'
+      transmission: 'transmisión del coche'
+      submit: 'Enviar'
+      submit_mileage: 'Actualizar kilometraje'
+    partial:
+      destroy: 'Borrar carro'
+      ask: 'Estas seguro?'
+    array:
+      fuel_type: 'híbrido diesel eléctrico gasolina etanol gas-natural'
+      vehicle_type: 'furgoneta todoterreno cabriolet pickup deportivo hatchback sedán vagón de-bienes'
+      transmission: 'manual semiautomático automático'
+    operations:
+      show: 'Añadir nueva operación' 

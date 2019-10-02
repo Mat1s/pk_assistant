@@ -1,0 +1,25 @@
+<div class="card border-info mb-3 card-custom" style="max-width: 18rem;">
+  <div class="card-header text-center"><%= car.make %></div>
+  <div class="card-body text-info">
+    <p class="card-text">
+      <div class='car' id="car<%= car.id %>">
+        <ul class='decoration-none'>
+          <li><%= t('activerecord.attributes.car.make')%>
+            <%= link_to "#{car.make}",
+            car_path(car.id) %></li>
+          <li><%= t('activerecord.attributes.car.model')%>: <%= car.model %></li>
+          <li><%= t('activerecord.attributes.car.year')%>: <%= car.year %></li>
+          <li><%= t('activerecord.attributes.car.vehicle_type')%>: <%= car.vehicle_type %></li>
+          <li><%= t('activerecord.attributes.car.fuel_type')%>: <%= car.fuel_type %></li>
+          <li><%= t('activerecord.attributes.car.cubic_capacity')%>: <%= car.cubic_capacity %></li>
+          <li><%= t('activerecord.attributes.car.transmission')%>: <%= car.transmission %></li>
+          <li><%= t('activerecord.attributes.car.purchase_date')%>: <%= car.purchase_date %></li>
+          <li><%= t('car.form.submit_mileage')%>: <%= link_to car.mileage , edit_car_path(car), remote: true %></li>
+          <li><%= link_to t('car.partial.destroy'), car_path(car.id),
+            method: :delete, remote: true, data: {confirm:
+            t('car.partial.ask') } %></li>
+        </ul>
+      </div>
+    </p>
+  </div>
+</div>

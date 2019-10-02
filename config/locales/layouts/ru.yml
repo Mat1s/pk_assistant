@@ -1,0 +1,30 @@
+ru:
+  layouts:
+    header:
+      title: 'Автомобильный помощник'
+      sign_out: 'Выйти'
+      sign_in: 'Войти'
+      sign_up: 'Зарегистрироваться'
+      sign_f: 'Войти через Facebook'
+      sign_t: 'Войти через Twitter'
+      sign_l: 'Войти через LinkedIn'
+      nickname: 'Прозвище: '
+      role: 'Роль: '
+      phrase: 'Поможем друг другу'
+      search: 'Поиск'
+      lang:
+        select: 'Выберите язык'
+      main:
+        empty: 'Пока нет записей'
+      en: 'English'
+      es: 'Español'
+      ru: 'Русский'
+    footer:
+      organization_check: 'Список неподтверждённых организаций'
+  addresses:
+    form:
+      submit: 'Подтвердить адрес'
+      add_address: 'Добавить адрес'
+  admin:
+    update:
+      success: 'Организация была успешно добавлена'

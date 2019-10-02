@@ -1,0 +1,26 @@
+ru:
+  organization:
+    form:
+      title: 'Заполните форму'
+      select: 'Выберите...'
+      services: 'Показать/Скрыть меню услуг'
+      address: 'Добавить адрес'
+      submit: 'Отправить'
+      city: 'Город'
+      street: 'Улица'
+      house_number: 'Номер дома'
+      phone: 'Телефон'
+      address_title: 'Адрес №'
+    organization:
+      contacts: 'Контакты:'
+      ask: 'Вы уверены?'
+      telephone: 'Телефон:'
+      add_address: 'Добавить адрес'
+      destroy: 'удалить'
+      edit: 'редактировать'
+      change_state: 'Изменить состояние организации'
+      address: 'Адреса'
+    address:
+      in: 'в'
+    permit:
+      process: 'Обработать запрос'

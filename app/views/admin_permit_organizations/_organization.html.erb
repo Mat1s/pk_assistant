@@ -1,0 +1,28 @@
+<div class='container-fluid for-permit'>
+  <h3>
+    <%= link_to "#{organization.name.upcase}",
+      admin_permit_organization_path(organization.id) %>
+  </h3><br />  
+  <div class='row'>
+    <div class='col-md-6'>
+      <% if @organization_addresses %>
+        <%= organization.service_type["type_#{I18n.locale}"] %><br /><br />
+        Email: <%= organization.email %><br />
+        <%= t('organization.organization.telephone') %> +<%= organization.phone %>
+        <br /><br />
+        <%= render partial: 'admin_permit_organizations/address',
+          collection: @organization_addresses %><br/><br/>
+      <% end %>
+    </div>
+
+    <div class='col-md-6'>
+      <% if @service_for_organizations %>
+        <%= render partial: 'admin_permit_organizations/service',
+          collection: @service_for_organizations %><br/><br/>
+        <%= link_to t('organization.permit.process'),
+          edit_admin_permit_organization_path(organization.id),
+          remote: true, class: "btn btn-info btn-custom" %>
+      <% end %>
+    </div>
+  </div>
+</div>

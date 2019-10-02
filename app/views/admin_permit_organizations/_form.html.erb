@@ -1,0 +1,14 @@
+<%= form_for(@organization, url: admin_permit_organization_path(@organization), method: :patch, remote: true, html: { id: 'admin_form' }) do |form| %>
+
+  <div><%= form.hidden_field :user_id, value: @organization.user_id %></div>
+
+  <div class='form-group'>
+    <%= label_tag :description, t('admin.form.cause') %><br />
+    <%= text_area_tag :description , nil, class: 'form-control',
+    placeholder: 'Write reason your action', require: true,
+    autocomplete: 'description', rows: 5, cols: 20 %> 
+  </div>
+
+  <%= form.submit t('admin.form.aprove'), class: "btn btn-large btn-success btn-form" %>
+  <%= form.submit t('admin.form.reject'), class: "btn btn-large btn-danger btn-form" %>
+<% end %>

@@ -1,0 +1,20 @@
+en:
+  car:
+    form:
+      make: 'choose car make'
+      model: 'choose car model'
+      year: 'choose year, when car made'
+      vehicle_type: 'choose car type of vehicle'
+      fuel_type: 'choose car fuel type'
+      transmission: 'car transmission'
+      submit: 'Submit'
+      submit_mileage: 'Update mileage'
+    partial:
+      destroy: 'Delete car'
+      ask: 'Are you sure?'
+    array:
+      fuel_type: 'hybrid diesel electric petrol ethanol natural-gas'
+      vehicle_type: 'cabriolet off-road van sports pickup limousine hatchback sedan wagon estate'
+      transmission: 'manual semi-automatic automatic'
+    operations:
+      show: 'Add new operation' 

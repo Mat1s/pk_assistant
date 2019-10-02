@@ -1,0 +1,6 @@
+en:
+  admin:
+    form:
+      cause: 'Reason for refusal or approval'
+      aprove: 'Aprove'
+      reject: 'Reject'

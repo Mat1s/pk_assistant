@@ -1,0 +1,9 @@
+<div class="organizations">
+  <%= render @organizations || "layout/empty_list" %>
+  <% if @organizations.first %>
+    <% if current_user.id == @organizations.first.user_id %>
+      <%= link_to t('organization.organization.new'),
+        new_organization_path, remote: true %>
+    <% end %>
+  <% end %>
+</div>

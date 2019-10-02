@@ -1,0 +1,7 @@
+en:
+  home:
+    index:
+      title: 'Main page'
+      organization:
+        title: 'Organizations'
+        create: 'Create new organization'

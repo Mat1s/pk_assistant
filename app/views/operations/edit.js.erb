@@ -1,0 +1,37 @@
+$('#operations_not_processed').hide();
+$('#operations_need_processed').hide().after("<%= j render 'form' %>");
+console.log('<%= @services.first.name %>');
+$('#service').val('<%= @services.first.name %>');
+$('.service_hidden').hide();
+$(document).ready(function() {
+  console.log($("#service").val());
+  if ($('#service').val().trim()) {
+    $.ajax({
+      type:"GET",
+      url:'/organizations/choosen_organizations',
+      dataType:'json',
+      data: {choosen_service: $('#service').val().trim() },
+      success:function(data) {
+        console.log(data);
+        $('#organization').prop('disabled', false);
+        $("#organization option").remove();
+        for(var i = 0; i < data.length; i++) {
+          $("#organization").append("<option value='" + data[i][0] +
+           "'>" + data[i][1] + "</option>");
+        }
+      }
+    })
+  } else {
+    $('#organization').prop('disabled', true);
+    $("#organization option").remove();
+    $("#organization").append('<option value="">Default</option>');
+  }
+});
+
+$('form').on('change', function() {
+  if ($('#organization').val() && $('#service').val() && $('#price').val()) {
+    $('#submit_btn').prop('disabled', false);
+  } else {
+    $('#submit_btn').prop('disabled', true);
+  }
+})

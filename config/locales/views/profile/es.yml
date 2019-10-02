@@ -1,0 +1,7 @@
+es:
+  profile:
+    submit: 'Guardar cambios'
+    title: 'Editar perfil'
+    show:
+      edit: 'Editar perfil'
+      new_car: 'Crear carro nuevo'

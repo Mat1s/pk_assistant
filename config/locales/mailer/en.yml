@@ -1,0 +1,14 @@
+en:
+  operation_mailer:
+    estimate_time:
+      subject: 'Time or mileage expires for the next service!'
+      greeting: 'Hello %{email}!'
+      body_1: 'In your car %{make} exires mileage: %{mileage}km less than 1000 km.'
+      body_2: 'In your car %{make} exires time of last pass service.'
+      redirect: 'Go to link for registrate service: '
+      link: 'click'
+    notify_car_holder:
+      subject: 'You passed service!'
+      greeting: 'Hello %{email}!'
+      body: 'You car %{make} passed the service.'
+      cost: 'Cost of operation - %{price}.'

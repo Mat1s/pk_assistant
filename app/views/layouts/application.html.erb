@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AutoAssistant</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all',
+     'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='wraper'>
+      <div class='header'>
+        <%= render 'layouts/header' %>
+      </div>
+      <div class='error'>
+        <% flash.each do |message_type, message| %>
+          <%= content_tag(:div, message, class: "alert alert-#{message_type}")%>
+        <% end %>
+      </div>
+      <div class='image-main'>
+      </div>
+      <div class='main' id='main'>
+        <%= yield %>
+      </div>
+      <div class='image-main2'>
+      </div>
+      <div class='footer'>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
+  </body>
+</html>

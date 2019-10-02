@@ -1,0 +1,31 @@
+<div class="card border-primary mb-3 card-custom" style="max-width: 18rem;">
+  <div class='card-header text-center'>
+    <%= @profile.nickname %>
+    <p>
+      <%= @profile.firstname.capitalize + ' ' + @profile.surname.capitalize %>
+    </p>
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">
+      <div><%= @profile.birthday.strftime("%d %B %Y") %></div>
+    </h5>
+    <p class="card-text">
+      <div><%= @profile.address %></div>
+      <div><%= link_to t('profile.show.edit'), edit_profile_path(@profile) %></div>
+      <% if policy(:organization).new? %>
+        <%= link_to t('home.index.organization.create'),
+          new_organization_path, remote: true %>
+      <% end %><br />
+      <%= link_to t('profile.show.new_car'), new_car_path, remote: true %>
+    </p>
+  </div>
+</div>
+
+<div class='organizations'>
+  <%= render partial: 'organizations/organization',
+  collection: @organizations || 'layouts/empty_list' %>
+  <%= paginate @organizations %>
+</div>
+
+<div class='cars'><%= render partial: 'cars/car', collection: @cars %></div>
+

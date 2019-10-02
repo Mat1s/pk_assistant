@@ -1,0 +1,6 @@
+es:
+  admin:
+    form:
+      cause: 'Razón de la negativa o aprobación'
+      aprove: 'Aprobar'
+      reject: 'Rechazar'
