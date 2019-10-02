@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   skip_after_action :verify_policy_scoped, only: [:change_locale, :search]
   def index
     @organization_count = Organization.count
-    #@organizations = policy_scope(Organization).page params[:page]
+    @organizations = policy_scope(Organization).page params[:page]
   end
 
   def change_locale

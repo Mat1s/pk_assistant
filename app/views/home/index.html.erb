@@ -1,3 +1,14 @@
-
+<% if @organization_count > 0 && policy_scope(@organizations) %>
+  <div class='organizations'>
+  <div class='paginate'><%= paginate @organizations, theme: 'twitter-bootstrap-4',
+                   pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b" %></div>
+    <%= render partial: 'organizations/organization',
+      collection: @organizations || 'layouts/empty_list' %>
+  </div>
+   <div class='paginate'><%= paginate @organizations, theme: 'twitter-bootstrap-4',
+                   pagination_class: "pagination-sm",
+                   nav_class: "d-inline-b" %></div>
+<% else %>
   <h1>No organizations</h1>
-
+<% end %>
