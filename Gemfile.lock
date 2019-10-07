@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/elastic/elasticsearch-rails.git
-  revision: 266b59c5e296abfc7a1a393fd130deb57d88e9ed
-  branch: master
-  specs:
-    elasticsearch-model (7.0.0)
-      activesupport (> 3)
-      elasticsearch (> 1)
-      hashie
-    elasticsearch-rails (7.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,8 +53,6 @@ GEM
     awesome_print (1.8.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
-    binding_of_caller (0.8.0)
-      debug_inspector (>= 0.0.1)
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     bootstrap (4.1.3)
@@ -89,6 +76,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    childprocess (3.0.0)
     chronic (0.10.2)
     coderay (1.1.2)
     coffee-rails (4.2.2)
@@ -101,7 +89,6 @@ GEM
     concurrent-ruby (1.1.4)
     connection_pool (2.2.2)
     crass (1.0.4)
-    debug_inspector (0.0.3)
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -109,12 +96,18 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
-    elasticsearch (6.1.0)
-      elasticsearch-api (= 6.1.0)
-      elasticsearch-transport (= 6.1.0)
-    elasticsearch-api (6.1.0)
+    docile (1.3.2)
+    elasticsearch (7.3.0)
+      elasticsearch-api (= 7.3.0)
+      elasticsearch-transport (= 7.3.0)
+    elasticsearch-api (7.3.0)
       multi_json
-    elasticsearch-transport (6.1.0)
+    elasticsearch-model (7.0.0)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (7.0.0)
+    elasticsearch-transport (7.3.0)
       faraday
       multi_json
     erubi (1.8.0)
@@ -125,7 +118,7 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
-    faker (1.9.1)
+    faker (1.9.3)
       i18n (>= 0.7)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
@@ -155,7 +148,6 @@ GEM
     i18n (1.4.0)
       concurrent-ruby (~> 1.0)
     interactor (3.1.1)
-    interception (0.5)
     ipaddress (0.8.3)
     jaro_winkler (1.5.2)
     jbuilder (2.8.0)
@@ -167,6 +159,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.2.0)
     jwt (2.1.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -240,18 +233,6 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    pry-byebug (3.6.0)
-      byebug (~> 10.0)
-      pry (~> 0.10)
-    pry-doc (1.0.0)
-      pry (~> 0.11)
-      yard (~> 0.9.11)
-    pry-rescue (1.5.0)
-      interception (>= 0.5)
-      pry (>= 0.12.0)
-    pry-stack_explorer (0.4.9.3)
-      binding_of_caller (>= 0.7)
-      pry (>= 0.9.11)
     public_suffix (3.0.3)
     puma (3.12.0)
     pundit (2.0.0)
@@ -296,15 +277,19 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rspec-core (3.8.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.2)
+    rspec-expectations (3.8.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-mocks (3.8.0)
+    rspec-mocks (3.8.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-rails (3.8.1)
+    rspec-rails (3.8.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -312,7 +297,7 @@ GEM
       rspec-expectations (~> 3.8.0)
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
-    rspec-support (3.8.0)
+    rspec-support (3.8.3)
     rubocop (0.62.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -323,6 +308,7 @@ GEM
       unicode-display_width (~> 1.4.0)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
+    rubyzip (2.0.0)
     sass (3.7.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -334,12 +320,20 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selenium-webdriver (3.142.6)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
     sidekiq (5.2.3)
       connection_pool (~> 2.2, >= 2.2.2)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     sidekiq-limit_fetch (3.4.0)
       sidekiq (>= 4)
+    simplecov (0.17.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -365,6 +359,16 @@ GEM
     unicode-display_width (1.4.1)
     warden (1.2.8)
       rack (>= 2.0.6)
+    watir (6.16.5)
+      regexp_parser (~> 1.2)
+      selenium-webdriver (~> 3.6)
+    watir-rails (2.2.1)
+      rack
+      rails
+      watir (>= 6.0.0.beta4)
+    watir-rspec (3.0.0)
+      rspec (~> 3.0)
+      watir (>= 6.0.0.beta4)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -377,7 +381,6 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yard (0.9.16)
 
 PLATFORMS
   ruby
@@ -393,8 +396,8 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
-  elasticsearch-model!
-  elasticsearch-rails!
+  elasticsearch-model (~> 7.0.0.pre)
+  elasticsearch-rails (~> 7.0.0.pre)
   factory_bot_rails
   faker
   figaro
@@ -411,10 +414,6 @@ DEPENDENCIES
   omniauth-twitter
   pg (>= 0.18, < 2.0)
   pry
-  pry-byebug
-  pry-doc
-  pry-rescue
-  pry-stack_explorer
   puma (~> 3.11)
   pundit
   rails (~> 5.2.1, >= 5.2.1.1)
@@ -424,11 +423,14 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sidekiq
   sidekiq-limit_fetch
+  simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  watir-rails
+  watir-rspec
   web-console (>= 3.3.0)
   whenever
 

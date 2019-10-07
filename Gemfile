@@ -10,8 +10,8 @@ gem 'bootstrap4-kaminari-views'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
-gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
-gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+gem 'elasticsearch-model', '~> 7.0.0.pre'
+gem 'elasticsearch-rails', '~> 7.0.0.pre'
 gem 'figaro'
 gem 'interactor', '~> 3.0'
 gem 'jbuilder', '~> 2.5'
@@ -38,11 +38,6 @@ gem 'fog-aws'
 group :development do
   gem 'awesome_print'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'pry'
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'pry-rescue'
-  gem 'pry-stack_explorer'
   gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -51,11 +46,15 @@ group :development do
 end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec-rails', '~> 3.8'
+  gem "watir-rspec"
+  gem 'watir-rails'
+  gem 'simplecov', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

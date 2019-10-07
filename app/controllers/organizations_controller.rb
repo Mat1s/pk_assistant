@@ -31,6 +31,7 @@ class OrganizationsController < ApplicationController
     result = CreateOrganizationAndServices.call(clear_params)
     @organization = result.organization
     authorize @organization
+    binding.pry
     if result.success?
       @organizations = current_user.organizations
       .where(aasm_state: [:verified, :published])
