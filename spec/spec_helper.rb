@@ -103,15 +103,18 @@ RSpec.configure do |config|
   # all other files created during the failing examples.
   config.add_formatter(:progress) if config.formatters.empty?
   config.add_formatter(Watir::RSpec::HtmlFormatter)
-
+ 
   # Open up the browser for each example.
-  config.before :all, type: :request do
+  config.before :all, type: :feature do
     @browser = Watir::Browser.new
+    @browser.window.resize_to(1920, 1080)
   end
 
   # Close that browser after each example.
-  config.after :all, type: :request do
+  config.after :all, type: :feature do
     @browser.close if @browser
+    User.delete_all
+    Profile.delete_all
   end
 
   # Include RSpec::Helper into each of your example group for making it possible to
@@ -125,7 +128,7 @@ RSpec.configure do |config|
   #
   # This needs that you've used @browser as an instance variable name in
   # before :all block.
-  config.include Watir::RSpec::Helper, type: :request
+  config.include Watir::RSpec::Helper, type: :feature
 
   # Include RSpec::Matchers into each of your example group for making it possible to
   # use #within with some of RSpec matchers for easier asynchronous testing:
@@ -135,6 +138,6 @@ RSpec.configure do |config|
   #
   # You can also use #during to test if something stays the same during the specified period:
   #   expect(@browser.text_field(name: "first_name")).to exist.during(2)
-  config.include Watir::RSpec::Matchers, type: :request
+  config.include Watir::RSpec::Matchers, type: :feature
 end
   
