@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 gem 'aasm'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap4-kaminari-views'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
